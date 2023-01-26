@@ -1,0 +1,40 @@
+.home-board {
+  background-image: url(https://digitalhub.fifa.com/transform/b0201811-9b04-4f90-aa4a-a33338f07fea/OFFICIAL-MATCH-BALL-WORLD-CUP-2022);
+  background-size: cover;
+  height: 80%;
+}
+
+.home-title {
+  padding-top: 4rem;
+  font-size: 50px;
+  font-weight: bold;
+  color: #4285F4;
+  // text-align: center;
+  text-shadow: 2px 2px #000000;
+  animation: colorchange 5s ease-in-out infinite;
+}
+
+.products-section{
+  padding-top: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  background: linear-gradient(to bottom, #ecd2a9, #d8ba8e,#b19161);
+}
+
+.product-cards{
+  padding: 4rem;
+  font-family: Verdana, sans-serif;
+  transition: all 0.3s ease-in-out;
+  background-size:cover;
+}
+
+.product-cards:hover{
+  background-color:rgb(212, 208, 208);
+  box-shadow: 2px 2px 5px rgb(61, 60, 60);
+}
+
+@keyframes colorchange{
+  0%{color: #4285F4;}
+  50%{color: #0000ff;}
+  100%{color: #4285F4;}
+}

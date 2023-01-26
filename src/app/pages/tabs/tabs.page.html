@@ -1,0 +1,46 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <!-- <ul>
+        <li *ngFor="let item of menu$ | async">
+          {{ item | async }}
+        </li>
+      </ul> -->
+
+    </ion-content>
+
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-tabs>
+      <ion-tab-bar slot="top">
+        <ion-menu-toggle>
+          <ion-button color="primary" class="ion-margin-start ion-margin-end">
+            <ion-icon name="grid-outline"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+        <ion-row class="top-bar-content-left">
+          <ion-col>
+            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/877e53119900623.Y3JvcCwzMTk2LDI0OTksNzEsMA.png" alt="i-Shop logo" class="home-screen-logo" [routerLink]="['/tabs/home']">
+          </ion-col>
+          <ion-col>
+            <ion-searchbar class="tabs-searchbar" color="light" placeholder="Search Items" animated="true" search-icon="search-circle" show-cancel-button="focus" show-clear-button="Show on Focus" clear-icon="close-outline"></ion-searchbar>
+          </ion-col>
+        </ion-row>
+
+        <ion-tab-button *ngFor="let tab of tabs" [tab]="tab.path">
+          <ion-icon class="tab-icons" [name]="tab.icon"></ion-icon>
+          <ion-label>{{ tab.name }}</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </div>
+</ion-app>
+
+

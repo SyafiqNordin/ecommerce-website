@@ -1,0 +1,38 @@
+<ion-content >
+  <section class="home-board">
+    <ion-row >
+      <ion-col offset="2">
+        <ion-title >
+          <h1 class="home-title">
+            NOW EVERYONE CAN BUY ANYTHING <br>
+            WITH THE LOWEST PRICE
+          </h1>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offset="2">
+        <ion-button fill="outline" size="large" color="dark" class="ion-margin-top">
+          Learn More
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </section>
+
+  <section class="products-section">
+    <ion-row>
+      <ion-col *ngFor="let product of products" size="4" size-lg="4" size-md="4" size-sm="6"
+      size-xs="12">
+        <ion-card class="product-cards" [ngStyle]="{'background-image' : 'url('+ product.image +')'}">
+          <ion-card-header>
+            <ion-card-title class="ion-padding ion-text-center" style="background-color: #d4cbbc; font-weight: 600;">
+              {{ product.category }}
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </section>
+</ion-content>
+
+

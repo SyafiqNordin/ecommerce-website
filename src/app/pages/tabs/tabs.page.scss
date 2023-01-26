@@ -1,0 +1,24 @@
+.home-screen-logo {
+  -webkit-user-drag: none;
+  cursor: pointer;
+  width: 5rem;
+}
+
+.tabs-searchbar {
+  width: 500px;
+  --border-radius: 50px;
+  text-align: left;
+  // --background: var(--ion-color-step-100);
+  // --placeholder-color: var(--ion-color-step-950);
+  // display: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.tab-icons{
+  font-size: 1.6rem;
+}
+
+ion-tab-button {
+  max-width: inherit;
+}
