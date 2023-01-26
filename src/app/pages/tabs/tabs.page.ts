@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertButton, AlertController, NavController } from '@ionic/angular';
 import { map, Observable, tap } from 'rxjs';
 import { WsApiService } from 'src/app/service/ws-api.service';
 
@@ -12,7 +13,9 @@ export class TabsPage implements OnInit{
   menu: any=[];
   menu$: any;
   constructor(
-    private ws:WsApiService
+    private ws:WsApiService,
+    private navCtrl: NavController,
+    private alertCtrl: AlertController
   ) {}
 
   ngOnInit(){
@@ -31,14 +34,34 @@ export class TabsPage implements OnInit{
         name: 'Notifications',
         path: 'notifications',
         icon: 'notifications'
-      },
-      {
-        name: 'Logout',
-        path: 'logout',
-        icon: 'log-out'
       }
     ];
     this.menu$ = this.ws.get('https://api.storerestapi.com/categories').pipe(map(data =>
     data)).subscribe(data => console.log(data));
+  }
+
+  async logout(){
+    const header = 'Warning';
+    const message = 'Are you sure you want to logout?';
+    const buttons: AlertButton[] = [{
+      text: 'Cancel',
+      role: 'cancel',
+      cssClass: 'cancel'
+    },
+    {
+      text:'Logout',
+      cssClass: 'danger',
+      handler: () => {
+        this.navCtrl.navigateForward('')
+      }
+    }];
+
+    const alert = await this.alertCtrl.create({
+      header,
+      message,
+      buttons,
+      cssClass: 'danger-alert'
+    });
+    await alert.present();
   }
 }

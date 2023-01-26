@@ -37,6 +37,12 @@
           <ion-icon class="tab-icons" [name]="tab.icon"></ion-icon>
           <ion-label>{{ tab.name }}</ion-label>
         </ion-tab-button>
+
+        <ion-tab-button tab="logout" (click)="logout()">
+          <ion-icon class="tab-icons" name="log-out"></ion-icon>
+          <ion-label> Logout </ion-label>
+        </ion-tab-button>
+
       </ion-tab-bar>
 
     </ion-tabs>

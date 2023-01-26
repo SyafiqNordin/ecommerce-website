@@ -20,10 +20,6 @@ const routes: Routes = [
         loadChildren: () => import('../notifications/notifications.module').then(m => m.NotificationsPageModule)
       },
       {
-        path: 'logout',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
-      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
