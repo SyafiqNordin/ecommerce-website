@@ -1,19 +1,24 @@
 <ion-app>
-  <ion-menu contentId="main-content">
+  <ion-menu contentId="main-content" >
     <ion-header>
       <ion-toolbar color="tertiary">
         <ion-title>Menu Content</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
-      <!-- <ul>
-        <li *ngFor="let item of menu$ | async">
-          {{ item | async }}
-        </li>
-      </ul> -->
-
+    <ion-content class="ion-no-padding">
+      <ion-accordion-group>
+        <ion-accordion value="categories">
+          <ion-item slot="header" color="light">
+            <ion-label>Categories</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-item *ngFor="let item of menu$ | async">
+              <ion-label >{{ item }}</ion-label>
+            </ion-item>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
     </ion-content>
-
   </ion-menu>
 
   <div class="ion-page" id="main-content">

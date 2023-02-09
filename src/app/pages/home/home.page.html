@@ -21,12 +21,13 @@
 
   <section class="products-section">
     <ion-row>
-      <ion-col *ngFor="let product of products" size="4" size-lg="4" size-md="4" size-sm="6"
+      {{ categories | json}}
+      <ion-col *ngFor="let category of categories$ | async; let i=index" size="4" size-lg="4" size-md="4" size-sm="6"
       size-xs="12">
-        <ion-card class="product-cards" [ngStyle]="{'background-image' : 'url('+ product.image +')'}">
+        <ion-card class="product-cards" [ngStyle]="{'background-image' : 'url('+ category_image[i] +')'}">
           <ion-card-header>
             <ion-card-title class="ion-padding ion-text-center" style="background-color: #d4cbbc; font-weight: 600;">
-              {{ product.category }}
+              {{ category | titlecase}}
             </ion-card-title>
           </ion-card-header>
         </ion-card>

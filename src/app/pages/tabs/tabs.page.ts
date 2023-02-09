@@ -10,10 +10,10 @@ import { WsApiService } from 'src/app/service/ws-api.service';
 })
 export class TabsPage implements OnInit{
   tabs: any[] = [];
-  menu: any=[];
+  menu: any;
   menu$: any;
   constructor(
-    private ws:WsApiService,
+    private ws: WsApiService,
     private navCtrl: NavController,
     private alertCtrl: AlertController
   ) {}
@@ -36,8 +36,7 @@ export class TabsPage implements OnInit{
         icon: 'notifications'
       }
     ];
-    this.menu$ = this.ws.get('https://api.storerestapi.com/categories').pipe(map(data =>
-    data)).subscribe(data => console.log(data));
+    this.menu$ = this.ws.get('https://dummyjson.com/products/categories');
   }
 
   async logout(){
