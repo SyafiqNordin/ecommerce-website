@@ -2,20 +2,23 @@
   -webkit-user-drag: none;
   cursor: pointer;
   width: 5rem;
+  margin-top: 0.5rem;
+}
+
+.tab-bar-content-left {
+  // margin-left: 1rem;
+  margin-right: 22.5rem;
 }
 
 .tabs-searchbar {
   width: 500px;
   --border-radius: 50px;
   text-align: left;
-  // --background: var(--ion-color-step-100);
-  // --placeholder-color: var(--ion-color-step-950);
-  // display: none;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-top: 5px;
+  margin-left: 1rem;
 }
 
-.tab-icons{
+.tab-icons {
   font-size: 1.6rem;
 }
 

@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu contentId="main-content" >
+  <ion-menu contentId="main-content">
     <ion-header>
       <ion-toolbar color="tertiary">
         <ion-title>Menu Content</ion-title>
@@ -11,25 +11,32 @@
           <ion-item slot="header" color="light">
             <ion-label>Categories</ion-label>
           </ion-item>
-          <div class="ion-padding" slot="content">
+          <div class="ion-no-padding" slot="content">
             <ion-item *ngFor="let item of menu$ | async">
-              <ion-label >{{ item }}</ion-label>
+              <ion-label lines="full">{{ item }}</ion-label>
             </ion-item>
           </div>
         </ion-accordion>
       </ion-accordion-group>
+      <ion-item button detail="true" href="tabs/cart">
+        <ion-label>
+          Cart
+        </ion-label>
+      </ion-item>
     </ion-content>
   </ion-menu>
 
-  <div class="ion-page" id="main-content">
-    <ion-tabs>
+  <ion-content class="ion-page" id="main-content">
+    <ion-tabs >
       <ion-tab-bar slot="top">
-        <ion-menu-toggle>
-          <ion-button color="primary" class="ion-margin-start ion-margin-end">
-            <ion-icon name="grid-outline"></ion-icon>
-          </ion-button>
-        </ion-menu-toggle>
-        <ion-row class="top-bar-content-left">
+        <ion-row class="tab-bar-content-left">
+          <ion-col>
+            <ion-menu-toggle>
+              <ion-button color="primary" class="ion-margin-top">
+                <ion-icon name="grid-outline"></ion-icon>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-col>
           <ion-col>
             <img src="https://mir-s3-cdn-cf.behance.net/projects/404/877e53119900623.Y3JvcCwzMTk2LDI0OTksNzEsMA.png" alt="i-Shop logo" class="home-screen-logo" [routerLink]="['/tabs/home']">
           </ion-col>
@@ -51,7 +58,7 @@
       </ion-tab-bar>
 
     </ion-tabs>
-  </div>
+  </ion-content>
 </ion-app>
 
 
