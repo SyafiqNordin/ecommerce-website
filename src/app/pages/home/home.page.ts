@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { tap } from 'rxjs';
 import { WsApiService } from 'src/app/service';
+import { ProductPage } from '../product/product.page';
 
 @Component({
   selector: 'app-home',
@@ -36,10 +38,16 @@ export class HomePage implements OnInit {
 
   constructor(
     private ws: WsApiService,
+    private navCtrl: NavController,
   ) { }
 
   ngOnInit() {
     this.categories$ = this.ws.get('https://dummyjson.com/products/categories')
+
+  }
+
+  goToPage(category: any) {
+    this.navCtrl.navigateForward('/product', { queryParams: { type: category}});
 
   }
 
